@@ -1,34 +1,35 @@
 #include <iostream>
-#include <filesystem>
 
 #include "utils/conosole/console.h"
 #include "exercices/exercises.h"
+#include "utils/args/args.h"
+#include "main.h"
 
 
-namespace fs = std::filesystem;
 using namespace Utils;
 using namespace Exercices;
 
-void main()
-{
+Args::ExecType execType;
+int onlyExercise;
 
+
+int main(int argsCount, char* args[])
+{
+  try{
     Console::WriteLine("Running exercices...");
 
-    std::string path = "/exercices";
-
-     try {
-        for (const auto& entry : fs::directory_iterator(path)) {
-            if (entry.is_directory()) {
-                Console::WriteLine(entry.path().string());
-            }
-        }
-    } catch (const fs::filesystem_error& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-    }
+    execType = Args::ParseArgs(argsCount,args, onlyExercise);
 
     E01::Run();
     E02::Run();
     E03::Run();
+
+    Console::WriteLine("Done!");
+    return 0;
+  
+  } catch (const std::exception& ex) {
+    Console::WriteLine(std::string("Exception: ") + ex.what());
+  }
 
 }
 

@@ -10,3 +10,15 @@ for /R src %%f in (*.cpp) do (
 
 cl.exe /Zi /EHsc /nologo /Fobuild\objects\ /Fdbuild\\app.pdb /Febuild\\app.exe !FILES!
 endlocal
+
+if(%ERRORLEVEL% NEQ 0) (
+  echo ==============================
+  echo Build failed.
+
+  exit /b %ERRORLEVEL%
+) else (
+  echo ==============================
+    echo Build succeeded.
+)
+
+

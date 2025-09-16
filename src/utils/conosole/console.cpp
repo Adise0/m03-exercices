@@ -19,4 +19,10 @@ namespace Utils {
     void Console::Separator() {
         std::cout << "----------------------------------------" << std::endl;
     }
+
+    string Console::Ask() {
+        string input;
+        std::cin >> input;
+        return input;
+    }
 }
