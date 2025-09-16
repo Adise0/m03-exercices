@@ -5,7 +5,7 @@
       "name": "Run with nodemon",
       "type": "cppvsdbg", // MSVC debugger
       "request": "launch",
-      "program": "${workspaceFolder}/src/main.exe", // Adjust if output is in a build folder
+      "program": "${workspaceFolder}/build/app.exe", // Adjust if output is in a build folder
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

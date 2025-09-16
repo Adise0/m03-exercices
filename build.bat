@@ -1,5 +1,6 @@
 @echo off
 if not exist build mkdir build
+if not exist build\objects mkdir build\objects
 
 setlocal enabledelayedexpansion
 set FILES=
@@ -7,5 +8,17 @@ for /R src %%f in (*.cpp) do (
     set FILES=!FILES! "%%f"
 )
 
-cl.exe /Zi /EHsc /nologo /Febuild\app.exe %FILES%
+cl.exe /Zi /EHsc /nologo /Fobuild\objects\ /Fdbuild\\app.pdb /Febuild\\app.exe !FILES!
 endlocal
+
+if(%ERRORLEVEL% NEQ 0) (
+  echo ==============================
+  echo Build failed.
+
+  exit /b %ERRORLEVEL%
+) else (
+  echo ==============================
+    echo Build succeeded.
+)
+
+
