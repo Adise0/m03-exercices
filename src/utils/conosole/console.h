@@ -10,5 +10,11 @@ namespace Utils {
         
         public:
         static void Write(std::string msg);
+
+        public:
+        static void Space();
+
+        public:
+        static void Separator();
       };
 }
