@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run with nodemon",
+      "type": "cppvsdbg", // MSVC debugger
+      "request": "launch",
+      "program": "${workspaceFolder}/src/main.exe", // Adjust if output is in a build folder
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal", // <<< THIS is what you want
+      "environment": []
+    }
+  ]
+}

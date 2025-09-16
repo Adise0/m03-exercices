@@ -1,0 +1,5 @@
+{
+  "watch": ["*.cpp"],
+  "ext": "cpp",
+  "exec": "build.bat && clear && build\\app.exe"
+}
