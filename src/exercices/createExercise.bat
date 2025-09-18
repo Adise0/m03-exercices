@@ -1,36 +1,58 @@
 @echo off
 
-set /p number="Enter exercise number (e.g., 01): "
+set /p EXERCISE_NUMBER="Enter exercise number (e.g., 01): "
 
-if "%number%"=="" (
-    echo No number provided. Exiting.
+if "%EXERCISE_NUMBER%"=="" (
+    echo No EXERCISE_NUMBER provided. Exiting.
     exit /b 1
 )
-if exist e%number% (
-    echo Exercise e%number% already exists. Exiting.
+if exist e%EXERCISE_NUMBER% (
+    echo Exercise e%EXERCISE_NUMBER% already exists.
     exit /b 1
 )
 
-mkdir e%number%
 
-copy template\e00.cpp e%number%\e%number%.cpp /Y
-copy template\e00.h e%number%\e%number%.h /Y
+mkdir e%EXERCISE_NUMBER%
 
-for %%f in (e%number%\*) do (
-    powershell -Command "(Get-Content '%%f') -replace '00','%number%' | Set-Content '%%f'"
+copy template\e00.cpp e%EXERCISE_NUMBER%\e%EXERCISE_NUMBER%.cpp /Y
+copy template\e00.h e%EXERCISE_NUMBER%\e%EXERCISE_NUMBER%.h /Y
+
+for %%f in (e%EXERCISE_NUMBER%\*) do (
+    powershell -Command "(Get-Content '%%f') -replace '00','%EXERCISE_NUMBER%' | Set-Content '%%f'"
 )
 
 
-setlocal
-set OUTPUT=exercises.h
+
+
+
+set OUTPUT=exercises.cpp
+set EXERCISE_NAME=e%EXERCISE_NUMBER%
+set INCLUDE_LINE=#include "./%EXERCISE_NAME%/%EXERCISE_NAME%.h"
+set REGISTER_LINE=REGISTER_EXERCISE(%EXERCISE_NAME%);
+
+
 if not exist "%OUTPUT%" (
     echo // This file is auto-generated. Do not edit manually. > "%OUTPUT%"
-    echo #pragma once >> "%OUTPUT%"
+    echo #include "../main.h" >> "%OUTPUT%"
     echo. >> "%OUTPUT%"
+    echo using namespace Exercices; >> "%OUTPUT%"
+    echo. >> "%OUTPUT%"
+    echo // Includes >> "%OUTPUT%"
+    echo // Registration >> "%OUTPUT%"
 )
 
-echo #include "e%number%\e%number%.h" >> "%OUTPUT%"
 
- echo Exercise e%number% created successfully.
+node includeExercise.js %EXERCISE_NUMBER%
+
+
+echo REGISTER_EXERCISE(E%EXERCISE_NUMBER%); >> "%OUTPUT%"
+
+if errorlevel 1 (
+   rm -r e%EXERCISE_NUMBER%
+   echo Failed, removing e%EXERCISE_NUMBER% folder.
+   exit
+) 
+
+echo Exercise e%EXERCISE_NUMBER% created successfully.
 
 

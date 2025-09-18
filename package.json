@@ -2,9 +2,10 @@
   "name": "testing",
   "version": "1.0.0",
   "main": "build/main.exe",
+  "type": "module",
   "scripts": {
-    "dev": "setupEnv.bat && nodemon -q .",
-    "createExercice": "cd src/exercices/ && createExercise.bat"
+    "dev": "setupEnv.bat && nodemon -q . -- --execType=Auto",
+    "createExercise": "cd src/exercices/ && createExercise.bat"
   },
   "keywords": [],
   "author": "",

@@ -1,7 +1,7 @@
 #pragma once
 
 namespace Exercices {
-class E02 {
+class E04 {
    public:
     static void Run();
 };
