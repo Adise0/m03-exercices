@@ -44,8 +44,6 @@ if (fs.existsSync(cachePath)) {
   prevCache = JSON.parse(fs.readFileSync(cachePath, "utf-8"));
 }
 
-fs.writeFileSync(cachePath, JSON.stringify(files));
-
 const changed = [];
 files.forEach((file) => {
   const prev = prevCache.find((f) => f.path === file.path);
@@ -81,6 +79,6 @@ if (filesToCompile.length != 0) {
       stdio: "inherit",
     }
   );
-
-  //  / Fdbuild / app.pdb / Febuild / app.exe;
 }
+
+fs.writeFileSync(cachePath, JSON.stringify(files));
