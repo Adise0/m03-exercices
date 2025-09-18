@@ -1,8 +1,9 @@
 #pragma once
 
 namespace Exercices {
-    class E00 {
-    public:
-       static void Run();
-      };
-}
+class E00 {
+   public:
+    static void Run();
+};
+
+}  // namespace Exercices
