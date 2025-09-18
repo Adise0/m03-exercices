@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "build/main.exe",
   "scripts": {
-    "dev": "nodemon -q .",
+    "dev": "setupEnv.bat && nodemon -q .",
     "createExercice": "cd src/exercices/ && createExercise.bat"
   },
   "keywords": [],
