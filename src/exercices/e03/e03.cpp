@@ -19,8 +19,6 @@ namespace Exercices {
         Console::Space();
 
 
-
-
         Console::WriteLine("What's your name?");
         string inputedName = "Pau";
 
