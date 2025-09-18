@@ -4,6 +4,7 @@
 
 #include "../../main.h"
 #include "../../utils/conosole/console.h"
+#include "../../utils/string/string.h"
 
 using namespace Utils;
 using namespace std;
@@ -21,7 +22,12 @@ void E07::Run() {
     Console::WriteLine("Exercise 07:");
     Console::Space();
 
-    Console::WriteLine("Hello, World!");
+    Console::WriteLine("Type a number");
+    float number = stof(Console::Ask(isAuto, "160"));
+    Console::Space();
+
+    Console::WriteLine(String::RemoveTrail(-number));
+
     Console::Separator();
     Console::Space();
 }
