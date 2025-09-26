@@ -23,7 +23,7 @@ void E13::Run() {
     Console::Space();
 
     srand(time(0));
-    int rnd = rand() % 20;
+    int rnd = rand() % 21;
     int attempts = 0;
     bool guessed = false;
     int inputedNum;
@@ -33,6 +33,7 @@ void E13::Run() {
         Console::WriteLine("Guess a number between 0 and 20");
         inputedNum = stoi(Console::Ask(isAuto, to_string(rnd)));
 
+        attempts++;
         currentGuess++;
         if (inputedNum == rnd) {
             guessed = true;
