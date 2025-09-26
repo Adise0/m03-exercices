@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "setupEnv.bat && nodemon -q . -- --execType=Auto",
+    "only": "setupEnv.bat && nodemon -q . -- --execType=Only",
+    "exec": "setupEnv.bat && nodemon -q .",
     "createExercise": "cd src/exercices/ && createExercise.bat"
   },
   "keywords": [],

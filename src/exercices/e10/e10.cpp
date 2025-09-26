@@ -21,7 +21,14 @@ void E10::Run() {
     Console::WriteLine("Exercise 10:");
     Console::Space();
 
-    Console::WriteLine("Hello, World!");
+    string response;
+
+    do {
+        Console::WriteLine("Can I stop?");
+        Console::Write("(y/n): ");
+        response = Console::Ask(isAuto, "y");
+    } while (response != "y");
+
     Console::Separator();
     Console::Space();
 }

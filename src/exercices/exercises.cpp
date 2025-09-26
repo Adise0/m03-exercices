@@ -8,7 +8,8 @@
 #include "./e07/e07.h" 
  #include "./e08/e08.h" 
  #include "./e09/e09.h" 
- #include "./e10/e10.h"
+ #include "./e10/e10.h" 
+ #include "./e11/e11.h"
 
 using namespace Exercices;
 
@@ -25,3 +26,5 @@ REGISTER_EXERCISE(E08);
 REGISTER_EXERCISE(E09); 
 
 REGISTER_EXERCISE(E10); 
+
+REGISTER_EXERCISE(E11); 
