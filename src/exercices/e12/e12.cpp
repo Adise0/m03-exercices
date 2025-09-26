@@ -1,5 +1,7 @@
 #include "e12.h"
 
+#include <time.h>
+
 #include <iostream>
 
 #include "../../main.h"
@@ -21,16 +23,20 @@ void E12::Run() {
     Console::WriteLine("Exercise 12:");
     Console::Space();
 
-    int rnd = 1 + rand() % 10;
+    srand(time(0));
+
+    int rnd1 = 1 + rand() % 10;
+    int rnd2 = 1 + rand() % 10;
     int inputedNum;
     int attempts = 1;
 
     while (true) {
-        rnd = 1 + rand() % 10;
-        Console::WriteLine("Input a number from 1-10: (rnd is -> " + to_string(rnd) + ")");
-        inputedNum = stoi(Console::Ask(isAuto, "8"));
+        Console::WriteLine("Input a number: (rnd is -> " + to_string(rnd1) + " * " +
+                           to_string(rnd2) + "=" + to_string(rnd1 * rnd2) + ")");
 
-        if (rnd == inputedNum) break;
+        inputedNum = stoi(Console::Ask(isAuto, to_string(rnd1 * rnd2)));
+
+        if (rnd1 * rnd2 == inputedNum) break;
 
         attempts++;
     }
