@@ -29,7 +29,7 @@ void E13::Run() {
     int inputedNum;
     int currentGuess = 0;
 
-    while (attempts < 55 && !guessed) {
+    while (attempts < 55) {
         Console::WriteLine("Guess a number between 0 and 20");
         inputedNum = stoi(Console::Ask(isAuto, to_string(rnd)));
 
