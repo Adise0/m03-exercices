@@ -23,12 +23,12 @@ void E12::Run() {
 
     int rnd = 1 + rand() % 10;
     int inputedNum;
-    int attempts = 0;
+    int attempts = 1;
 
     while (true) {
         rnd = 1 + rand() % 10;
-        Console::WriteLine("Input a number from 1-10:");
-        inputedNum = stoi(Console::Ask(isAuto, "0"));
+        Console::WriteLine("Input a number from 1-10: (rnd is -> " + to_string(rnd) + ")");
+        inputedNum = stoi(Console::Ask(isAuto, "8"));
 
         if (rnd == inputedNum) break;
 
