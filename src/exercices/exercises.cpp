@@ -11,7 +11,10 @@
  #include "./e10/e10.h" 
  #include "./e11/e11.h" 
  #include "./e12/e12.h" 
- #include "./e13/e13.h"
+ #include "./e13/e13.h" 
+ #include "./e14/e14.h" 
+ #include "./e15/e15.h" 
+ #include "./e16/e16.h"
 
 using namespace Exercices;
 
@@ -34,3 +37,9 @@ REGISTER_EXERCISE(E11);
 REGISTER_EXERCISE(E12); 
 
 REGISTER_EXERCISE(E13); 
+
+REGISTER_EXERCISE(E14); 
+
+REGISTER_EXERCISE(E15); 
+
+REGISTER_EXERCISE(E16); 
