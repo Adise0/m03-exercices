@@ -30,7 +30,7 @@ void E15::Run() {
             Console::Write(((i == 0 || i == size - 1) || (k == 0 || k == size - 1)) ? " ## "
                                                                                     : "    ");
         }
-        Console::WriteLine("");
+        Console::Space();
     }
 
     Console::Separator();

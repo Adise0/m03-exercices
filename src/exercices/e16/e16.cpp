@@ -28,17 +28,12 @@ void E16::Run() {
     for (size_t i = 0; i < size; i++) {
         int spaces = size - (i / 2) - 1;
         for (size_t j = 0; j < spaces; j++) {
-            if (j != spaces - 1)
-                Console::Write("    ");
-            else if (i % 2 == 0)
-                Console::Write("    ");
-            else
-                Console::Write("  ");
+            Console::Write((j != spaces - 1 || i % 2 == 0) ? "    " : "  ");
         }
         for (size_t k = 0; k < i; k++) {
             Console::Write(" ## ");
         }
-        Console::WriteLine("");
+        Console::Space();
     }
 
     Console::Separator();
