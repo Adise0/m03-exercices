@@ -54,6 +54,8 @@ void E18::Run() {
     }
 
     while (isPlaying) {
+        system("cls");
+
         for (size_t i = 0; i < DUNGEON_SIZE; i++) {
             for (size_t j = 0; j < DUNGEON_SIZE; j++) {
                 int celState = dungeon[i][j];
@@ -91,7 +93,7 @@ void E18::Run() {
                 dudePos[1] = dudePos[1] - 1;
                 break;
             case 'd':
-                if (dudePos[0] == DUNGEON_SIZE - 2) break;
+                if (dudePos[1] == DUNGEON_SIZE - 2) break;
                 dudePos[1] = dudePos[1] + 1;
                 break;
             case 'w':
@@ -99,7 +101,7 @@ void E18::Run() {
                 dudePos[0] = dudePos[0] - 1;
                 break;
             case 's':
-                if (dudePos[1] == DUNGEON_SIZE - 2) break;
+                if (dudePos[0] == DUNGEON_SIZE - 2) break;
                 dudePos[0] = dudePos[0] + 1;
                 break;
 
@@ -108,10 +110,8 @@ void E18::Run() {
         }
 
         if (dudePos[0] == tresurePos[0] && dudePos[1] == tresurePos[1]) {
-            break;
+            isPlaying = false;
         }
-
-        system("cls");
     }
     Console::Space();
     Console::Separator();
