@@ -16,7 +16,9 @@
  #include "./e15/e15.h" 
  #include "./e16/e16.h" 
  #include "./e17/e17.h" 
- #include "./e18/e18.h"
+ #include "./e18/e18.h" 
+ #include "./e19/e19.h" 
+ #include "./e20/e20.h"
 
 using namespace Exercices;
 
@@ -49,3 +51,7 @@ REGISTER_EXERCISE(E16);
 REGISTER_EXERCISE(E17); 
 
 REGISTER_EXERCISE(E18); 
+
+REGISTER_EXERCISE(E19); 
+
+REGISTER_EXERCISE(E20); 

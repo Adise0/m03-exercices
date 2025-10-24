@@ -20,7 +20,7 @@ string Console::Ask(bool isAuto, string defaultValue) {
     }
 
     string input;
-    std::cin >> input;
+    getline(cin, input);
     return input;
 }
 }  // namespace Utils

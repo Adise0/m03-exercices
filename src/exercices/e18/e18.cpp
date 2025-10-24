@@ -53,7 +53,7 @@ void E18::Run() {
         }
     }
 
-    while (isPlaying) {
+    while (isPlaying && !isAuto) {
         system("cls");
 
         for (size_t i = 0; i < DUNGEON_SIZE; i++) {
