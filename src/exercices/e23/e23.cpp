@@ -26,7 +26,7 @@ void E23::Run() {
     queue<string> phraseQueue;
     int i = 3;
     while (true) {
-        input = Console::Ask(isAuto, i <= 0 ? "-1" : "asd");
+        input = Console::Ask(isAuto, i <= 0 ? "-1" : ("asd" + to_string(i)));
         i--;
         if (input == "-1") break;
         phraseQueue.push(input);
