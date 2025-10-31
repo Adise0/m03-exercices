@@ -33,8 +33,8 @@ void E21::Run() {
     string reversedEnd(end.rbegin(), end.rend());
 
     Console::Space();
-    Console::WriteLine("Your word \"" + input + " as " + start + " " + end + "\" is " +
-                       (start == reversedEnd ? "" : "NOT ") + "a palindrome");
+    Console::WriteLine("Your word \"" + input + "\" is " + (start == reversedEnd ? "" : "NOT ") +
+                       "a palindrome");
 
     Console::Separator();
     Console::Space();
