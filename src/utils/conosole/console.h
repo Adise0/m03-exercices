@@ -18,6 +18,6 @@ class Console {
     static void Separator();
 
    public:
-    static string Ask(bool isAuto = false, string default = "");
+    static string Ask(bool isAuto = false, string defaultValue = "");
 };
 }  // namespace Utils
