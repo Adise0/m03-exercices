@@ -11,28 +11,30 @@ using namespace std;
 
 namespace Exercices {
 void E24::Run() {
-    if (execType == Args::ExecType::Only && onlyExercise != 24) {
-        return;
-    }
+  if (execType == Args::ExecType::Only && onlyExercise != 24) {
+    return;
+  }
 
-    bool isAuto = execType == Args::ExecType::Auto;
+  bool isAuto = execType == Args::ExecType::Auto;
 
-    Console::Space();
-    Console::Separator();
-    Console::WriteLine("Exercise 24:");
-    Console::Space();
+  Console::Space();
+  Console::Separator();
+  Console::WriteLine("Exercise 24:");
+  Console::Space();
 
-    vector<int> testVect = vector<int>{1, 2, 3, 4};
-    testVect.push_back(5);
-    testVect.insert(testVect.begin(), 6);
-    testVect.emplace(testVect.begin(), 7);
-    // testVect.pop_back();
+  vector<int> testVect = vector<int>{1, 2, 3, 4};
+  testVect.push_back(5);
+  testVect.insert(testVect.end(), 6);
 
-    for (int numb : testVect) {
-        Console::WriteLine(to_string(numb));
-    }
+  testVect.end();
 
-    Console::Separator();
-    Console::Space();
+  // testVect.pop_back();
+
+  for (int numb : testVect) {
+    Console::WriteLine(to_string(numb));
+  }
+
+  Console::Separator();
+  Console::Space();
 }
 }  // namespace Exercices
