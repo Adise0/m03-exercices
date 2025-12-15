@@ -25,7 +25,8 @@
  #include "./e24/e24.h" 
  #include "./e25/e25.h" 
  #include "./e26/e26.h" 
- #include "./e27/e27.h"
+ #include "./e27/e27.h" 
+ #include "./e28/e28.h"
 
 using namespace Exercices;
 
@@ -76,3 +77,5 @@ REGISTER_EXERCISE(E25);
 REGISTER_EXERCISE(E26); 
 
 REGISTER_EXERCISE(E27); 
+
+REGISTER_EXERCISE(E28); 
